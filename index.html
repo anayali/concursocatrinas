@@ -29,9 +29,25 @@
 </head>
 <body>
     <div class="qr-container">
-     
+        <?php
+        require "phpqrcode/qrlib.php";
+
+        $dir="imagen/";
+
+        if(!file_exists($dir))
+        mkdir($dir);
+
+        $filename=$dir.'imgqr.png';
+
+        $tam=6; // Reducir tamaño del QR
+        $precision='L';
+        $frameSize=3;
+        $contenido="http://localhost/Certificado5BP/certificado.php?participante=1";
+
+        QRcode::png($contenido, $filename, $precision, $tam, $frameSize);
+
+        echo '<img src="'.$dir.basename($filename).'"/>';
+        ?>
     </div>
 </body>
 </html>
-
- 
