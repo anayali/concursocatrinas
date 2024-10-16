@@ -29,7 +29,12 @@
 </head>
 <body>
     <div class="qr-container">
-        <?php
+     
+    </div>
+</body>
+</html>
+
+   <?php
         require "phpqrcode/qrlib.php";
 
         $dir="imagen/";
@@ -48,6 +53,3 @@
 
         echo '<img src="'.$dir.basename($filename).'">';
         ?>
-    </div>
-</body>
-</html>
